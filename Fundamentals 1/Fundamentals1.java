@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 public class Fundamentals1
     {
     public static void main (String args [])
@@ -11,7 +12,14 @@ public class Fundamentals1
         double CallFunction1= multiply2(ValueC,((add2(ValueA, ValueB))));
         System.out.println(CallFunction1);
         
-        double CallFunction2= divide2(ValueB,((subtract2(ValueB,ValueC))));
+        String input= JOptionPane.showInputDialog("In X/(Y-Z) mathmatical equation,\n" +
+                                                  "Enter a value for X \n" +
+                                                  "Enter a value for Y \n" + 
+                                                  "Enter a value for Z \n");
+                                                  
+            
+        double CallFunction2= 
+        divide2(ValueB,((subtract2(ValueB,ValueC))));
         System.out.println(CallFunction2);
         } //end method main
     public static void dataTypes ()
@@ -82,15 +90,18 @@ public class Fundamentals1
     }
     public static void compare(int a, int b)
         {
-        String string1= String.format("The value of a is %a and it is greater than b whose value is %b.",a,b);
-        String string2= String.format("The value of a is %a and it is less than b whose value is %b.",a,b);
-        String string3= String.format("The value of a is %a and it is equal to  b whose value is %b.",a,b);
-        if (a>b)
-        {System.out.println(string1);};
-        if (a<b)
-        {System.out.println(string2);};
-        if (a==b)
-        {System.out.println(string3);};
+        String string1= String.format("The value of a is %1$d and it is greater than b whose value is %2$d.",a,b);
+        String string2= String.format("The value of a is %1$d and it is less than b whose value is %2$d.",a,b);
+        String string3= String.format("The value of a is %1$d and it is equal to  b whose value is %2$d.",a,b);
+        if (a>b) {
+        System.out.println(string1);
+    }
+        else if (a<b) {
+            System.out.println(string2);
+    }
+        else {
+            System.out.println(string3);
+    }
     }
 }
         
