@@ -4,6 +4,15 @@ public class Fundamentals1
         {
         System.out.println( "Hello everyone out there! "); //Display the string
         
+        double ValueA= 8.41;
+        double ValueB= 2.74;
+        double ValueC= 4.11;
+        
+        double CallFunction1= multiply2(ValueC,((add2(ValueA, ValueB))));
+        System.out.println(CallFunction1);
+        
+        double CallFunction2= divide2(ValueB,((subtract2(ValueB,ValueC))));
+        System.out.println(CallFunction2);
         } //end method main
     public static void dataTypes ()
         {
@@ -31,6 +40,58 @@ public class Fundamentals1
         char charType= 'A';
         System.out.println("Char datatype is used to store any character. Could be used in methods to create unicodes for a product.");
     }
+    public static int add(int a, int b)
+        {
+        int sum= a + b;
+        return sum;
     }
+    public static int subtract(int a, int b)
+        {
+        int difference= a + b;
+        return difference;
+    }
+    public static int multiply(int a, int b)
+        {
+        int product= a + b;
+        return product;
+    }
+    public static int divide(int a, int b)
+        {
+        int quotient= a / b;
+        return quotient;
+    }
+    public static double add2(double a, double b)
+        {
+        double sum= a + b;
+        return sum;
+    }
+    public static double subtract2(double a, double b)
+        {
+        double difference= a + b;
+        return difference;
+    }
+    public static double multiply2(double a, double b)
+        {
+        double product= a + b;
+        return product;
+    }
+    public static double divide2(double a, double b)
+        {
+        double quotient = a + b;
+        return quotient;
+    }
+    public static void compare(int a, int b)
+        {
+        String string1= String.format("The value of a is %a and it is greater than b whose value is %b.",a,b);
+        String string2= String.format("The value of a is %a and it is less than b whose value is %b.",a,b);
+        String string3= String.format("The value of a is %a and it is equal to  b whose value is %b.",a,b);
+        if (a>b)
+        {System.out.println(string1);};
+        if (a<b)
+        {System.out.println(string2);};
+        if (a==b)
+        {System.out.println(string3);};
+    }
+}
         
  
