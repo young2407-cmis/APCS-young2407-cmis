@@ -3,8 +3,7 @@ public class Fundamentals1
     {
     public static void main (String args [])
         {
-        
-        System.out.println( "Hello everyone out there! "); //Display the string
+        /*System.out.println( "Hello everyone out there! "); //Display the string
         dataTypes();
         
         double ValueA= 8.41;
@@ -32,8 +31,13 @@ public class Fundamentals1
         
         System.out.println(CallFunction2);
         System.out.println(CallFunction3);
-        
-        
+        */
+       
+        // Conditionals #2. //
+        int num5 = 10;
+        int num6 = 13;
+        System.out.println(compare(num5, num6));
+        System.out.println(classify(num5));
         } //end method main
     public static void dataTypes ()
         {
@@ -101,22 +105,33 @@ public class Fundamentals1
         double quotient = a / b;
         return quotient;
     }
-    public static void compare(int a, int b)
+    public static String compare(int a, int b)
         {
         String string1= String.format("The value of a is %1$d and it is greater than b whose value is %2$d.",a,b);
         String string2= String.format("The value of a is %1$d and it is less than b whose value is %2$d.",a,b);
         String string3= String.format("The value of a is %1$d and it is equal to  b whose value is %2$d.",a,b);
         if (a>b) {
-        System.out.println(string1);
+        return (string1);
     }
         else if (a<b) {
-            System.out.println(string2);
+            return (string2);
     }
         else {
-            System.out.println(string3);
+            return (string3);
     }
     }
-    
+    public static int classify(int a)
+        {
+        if (a==0) {
+        return (0);
+    }
+        else if (a%2==0) {
+            return (1);
+    }
+        else {
+            return (-1);
+    }
+    }
 }
         
  
