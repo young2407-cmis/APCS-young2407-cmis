@@ -135,11 +135,11 @@ public class Fundamentals1
     }
     public static void sqareTable ()
         {
-        for(int x = 1; x < 10; x = x + 1) { 
+        for(int x = 1; x <= 10; x = x + 1) { 
             int square = x*x;
-            Random ran = new Random();
-            int ranndom = ran.nextInt(11)+5;
-            System.out.println (x + "\t" + square + ranndom + "\n");
+            Random rand= new Random();
+            int n= rand.nextInt(square)+x;
+            System.out.println (x + "\t" + square + "\t"+ n + "\n");
         }
     }        
 }
