@@ -141,5 +141,34 @@ public class Fundamentals1
             int n= rand.nextInt(square)+x;
             System.out.println (x + "\t" + square + "\t"+ n + "\n");
         }
-    }        
+    }
+    public static int triangle (int x)
+        {
+        int returnvalue= 0;
+        for(;x>0;x--) {
+            int product= x;
+            returnvalue += product;
+        }
+        return returnvalue;
+}
+    public static int pyramid (int x)
+        {
+        int returnvalue= 0;
+        while(x>0) {
+            int product= x;
+            int square= x*x;
+            returnvalue += square;
+            x--;
+        }
+        return returnvalue;
+}
+    public static void checkerboard(int h, int w)
+    {
+        for (int x=h;x>0;x--) {
+            System.out.println("-");
+}
+        for (int x=w; x>0;x--) {
+            
+}
+}
 }
