@@ -86,22 +86,22 @@ public class Fundamentals1
         int quotient= a / b;
         return quotient;
     }
-    public static double add2(double a, double b)
+    public static double add(double a, double b)
         {
         double sum= a + b;
         return sum;
     }
-    public static double subtract2(double a, double b)
+    public static double subtract(double a, double b)
         {
         double difference= a - b;
         return difference;
     }
-    public static double multiply2(double a, double b)
+    public static double multiply(double a, double b)
         {
         double product= a * b;
         return product;
     }
-    public static double divide2(double a, double b)
+    public static double divide(double a, double b)
         {
         double quotient = a / b;
         return quotient;
@@ -162,13 +162,23 @@ public class Fundamentals1
         }
         return returnvalue;
 }
+    public static void stringbuffer(String[]args) {
+      StringBuffer sb = new StringBuffer();
+      for (int i=0; i<1000; i++) {
+          sb.append(i);
+      }
+      System.out.println(sb.toString());
+  }
     public static void checkerboard(int h, int w)
     {
-        for (int x=h;x>0;x--) {
-            System.out.println("-");
-}
-        for (int x=w; x>0;x--) {
-            
+     for(;h>=0;h--){
+         String height =("");
+         height += "\n";
+         System.out.println(height);
+        }
+     for(;w>=0;w--){
+         String width ="";
+         width += "-";
 }
 }
 }
