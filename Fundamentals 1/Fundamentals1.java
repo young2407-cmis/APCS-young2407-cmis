@@ -150,7 +150,7 @@ public class Fundamentals1
             returnvalue += product;
         }
         return returnvalue;
-}
+    }
     public static int pyramid (int x)
         {
         int returnvalue= 0;
@@ -161,23 +161,53 @@ public class Fundamentals1
             x--;
         }
         return returnvalue;
-}
+    }
     public static void stringbuffer(String[]args) {
       StringBuffer sb = new StringBuffer();
       for (int i=0; i<1000; i++) {
           sb.append(i);
       }
       System.out.println(sb.toString());
-  }
+    }
     public static void checkerboard(int h, int w)
     {
         String height="";
         String width="";
-    for(;h>0;h--){
-        for(;w>0;w--){
-         width= width + "-";
-        }   
-    System.out.println(width);
-}
-}
-}
+        String up= "";
+        int alternateh= h;
+        int alternatehh= h;
+        for(;h>0;h--){
+            for(;w>0;w--){
+                up = up + "-";
+                if (h%2!=0){
+                    if (w%2!=0) {
+                        width= width + " ";
+                    }
+                    else {
+                        width= width + "#";
+                    }
+                }   
+                else if (h%2==0){
+                    if (w%2==0) {
+                        width= width + " ";
+                    }
+                    else {
+                        width= width + "#";
+                    }
+                }
+            }
+        }
+            String top= "+" + up + "+";
+            String side= "|" + width + "|";
+            if (h>alternateh-1){
+                System.out.println (top);
+            }
+            else if (h==1){
+                System.out.println (top);
+            }
+            else {
+                System.out.println (side);
+            }
+        }
+    }
+
