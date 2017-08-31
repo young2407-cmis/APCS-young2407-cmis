@@ -171,14 +171,13 @@ public class Fundamentals1
   }
     public static void checkerboard(int h, int w)
     {
-     for(;h>=0;h--){
-         String height =("");
-         height += "\n";
-         System.out.println(height);
-        }
-     for(;w>=0;w--){
-         String width ="";
-         width += "-";
+        String height="";
+        String width="";
+    for(;h>0;h--){
+        for(;w>0;w--){
+         width= width + "-";
+        }   
+    System.out.println(width);
 }
 }
 }
