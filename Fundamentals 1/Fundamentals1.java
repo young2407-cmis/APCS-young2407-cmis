@@ -174,44 +174,44 @@ public class Fundamentals1
         String height="";
         String width="";
         String up= "";
-        int alternateh= h;
+        int alternateh= h+2;
         int x= w;
         int alternaterealh= h+2;
         int y= alternaterealh;
         for(;alternaterealh>0;alternaterealh--){
             for(;w>0;w--){
                 up = up + "-";
-                /*width= width+ "#";*/
-                for(;y>0;y--)
+                for (y=h;y>0;y--){
                     if (y%2!=0){
-                        if (x%2!=0) {
-                            width= width + " ";
+                        if (x%2!=0){
+                            width += "#";
                         }
                         else {
-                            width= width + "#";
+                            width += " ";
                         }
-                    }   
-                    else if (y%2==0){
-                        if (x%2==0) {
-                            width= width + " ";
+                    }
+                    if (y%2==0){
+                        if (x%2==0){
+                            width += "#";
                         }
                         else {
-                            width= width + "#";
+                            width += " ";
                         }
                     }
                 }
+                width= width+ "#";
+                }
             String top= "+" + up + "+";
             String side= "|" + width + "|";
-            if (y>y-1){
+            if (alternaterealh>alternateh-1){
                 System.out.println (top);
             }
-            else if (y==1){
+            else if (alternaterealh==1){
                 System.out.println (top);
             }
             else {
                 System.out.println (side);
-            }
-        }   
-    }
+            }     
+        }
+    }     
 }
-
