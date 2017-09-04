@@ -181,26 +181,31 @@ public class Fundamentals1
         for(;alternaterealh>0;alternaterealh--){
             for(;w>0;w--){
                 up = up + "-";
-                for (y=h;y>0;y--){
-                    if (y%2!=0){
-                        if (x%2!=0){
+                    if (alternaterealh%2!=0){
+                        if (w%2!=0){
                             width += "#";
                         }
                         else {
                             width += " ";
                         }
                     }
-                    if (y%2==0){
-                        if (x%2==0){
+                    else if (alternaterealh%2==0){
+                        if (w%2==0){
                             width += "#";
                         }
                         else {
                             width += " ";
                         }
                     }
+                    /*String side= "|" + width + "|";
+                    if (alternaterealh-(alternaterealh-1) && alternaterealh<alternaterealh-1){
+                        System.out.printlb(side);
+                    }
                 }
-                width= width+ "#";
-                }
+                    
+                /*width= width+ "#";*/
+              
+            }
             String top= "+" + up + "+";
             String side= "|" + width + "|";
             if (alternaterealh>alternateh-1){
