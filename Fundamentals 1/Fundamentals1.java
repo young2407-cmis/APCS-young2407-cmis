@@ -185,18 +185,18 @@ public class Fundamentals1
                 
                     if (alternaterealh%2!=0){
                         if (w%2!=0){
-                            width += "#";
+                            width = width + "#";
                         }
                         else {
-                            width += " ";
+                            width = width + " ";
                         }
                     }
-                    else if (alternaterealh%2==0){
+                    else{
                         if (w%2==0){
-                            width2 += "#";
+                            width2 = width2 + "#";
                         }
                         else {
-                            width2 += " ";
+                            width2 = width2 + " ";
                         }
                     }
                     /*String side= "|" + width + "|";
@@ -221,7 +221,7 @@ public class Fundamentals1
                 if (alternaterealh%2!=0){
                     System.out.println (side2);
                 }
-                if (alternaterealh%2==0){
+                else if (alternaterealh%2==0){
                     System.out.println (side);
                 }
             }     
