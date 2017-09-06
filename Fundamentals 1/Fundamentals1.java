@@ -177,54 +177,50 @@ public class Fundamentals1
         String up= "";
         int alternateh= h+2;
         int x= w;
+        int xx=w;
         int alternaterealh= h+2;
         int y= alternaterealh;
         for(;alternaterealh>0;alternaterealh--){
             for(;w>0;w--){
                 up = up + "-";
-                
+            }
+            if (alternaterealh%2!=0){
+                for (;x>0;x--) {
+                if (x%2!=0){
+                    width = width + "#";
+                }
+                else {
+                    width = width + " ";
+                }
+            }
+            }
+            else if (alternaterealh%2==0){
+                for (;xx>0;xx--) {
+                if (xx%2==0){
+                    width2 = width2 + "#";
+                }
+                else {
+                    width2 = width2 + " ";
+                }
+                }
+            }
+                String top= "+" + up + "+";
+                String side= "|" + width + "|";
+                String side2= "|" + width2+ "|";
+                if (alternaterealh>alternateh-1){
+                    System.out.println (top);
+                }
+                else if (alternaterealh==1){
+                    System.out.println (top);
+                }
+                else {
                     if (alternaterealh%2!=0){
-                        if (w%2!=0){
-                            width = width + "#";
-                        }
-                        else {
-                            width = width + " ";
-                        }
+                        System.out.println (side2);
                     }
-                    else{
-                        if (w%2==0){
-                            width2 = width2 + "#";
-                        }
-                        else {
-                            width2 = width2 + " ";
-                        }
+                    else if (alternaterealh%2==0){
+                        System.out.println (side);
                     }
-                    /*String side= "|" + width + "|";
-                    if (alternaterealh-(alternaterealh-1) && alternaterealh<alternaterealh-1){
-                        System.out.printlb(side);
-                    }
-                }
-                    
-                /*width= width+ "#";*/
-              
+                }     
             }
-            String top= "+" + up + "+";
-            String side= "|" + width + "|";
-            String side2= "|" + width2+ "|";
-            if (alternaterealh>alternateh-1){
-                System.out.println (top);
-            }
-            else if (alternaterealh==1){
-                System.out.println (top);
-            }
-            else {
-                if (alternaterealh%2!=0){
-                    System.out.println (side2);
-                }
-                else if (alternaterealh%2==0){
-                    System.out.println (side);
-                }
-            }     
-        }
-    }     
-}
+        }      
+    }
