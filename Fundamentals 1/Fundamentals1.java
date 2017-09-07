@@ -43,7 +43,7 @@ public class Fundamentals1
     public static void dataTypes ()
         {
         byte byteType= 15;
-        System.out.println("8bit, limited integer datatype. Byte could be used to save memory when it is used to represent someone's age\n");
+        System.out.println("8bit, limited integer datatype.");
 
         short shortType= 1912;
         System.out.println("16bit, limited integer datatype that is one step larger than byte. Also used to save memory and could be used to represent the year?\n");
@@ -178,57 +178,55 @@ public class Fundamentals1
         double totalhashes = ((h*w)+1)/2;
         double therandomnumber = Math.random();
         boolean onetime= false;
-        int indicator = 0;
         int alternateh= h+2;
         int x= w;
         int xx=w;
         int alternaterealh= h+2;
         int y= alternaterealh;
+        int count = 0;
         for(;alternaterealh>0;alternaterealh--){
             for(;w>0;w--){
                 up = up + "-";
             }
             if (alternaterealh%2!=0){
                 for (;x>0;x--) {
-                if (x%2!=0){
-                    for(indicator=0;indicator>0;indicator++){
-                        double probability= indicator/totalhashes;
-                        if (therandomnumber < probability && onetime == false){
-                            width = width + (int)(Math.random()*10);
-                            onetime = true;
+                    if (x%2!=0){
+                            count++;
+                            double probability= count/totalhashes;
+                            if (therandomnumber < probability && onetime == false){
+                                width = width + (int)(Math.random()*10);
+                                onetime = true;
+                            }
+                            else {
+                                width = width + "#";
+                            }
                         }
-                        else {
-                            width = width + "#";
-                        }
+                    else {
+                        width = width + " ";
                     }
-                }
-                else {
-                    width = width + " ";
-                }
-            }
+                }   
             }
             else if (alternaterealh%2==0){
                 for (;xx>0;xx--) {
-                if (xx%2==0){
-                    for(indicator=0;indicator>0;indicator++){
-                        double probability= indicator/totalhashes;
-                        if (therandomnumber < probability && onetime == false){
-                            width2 = width2 + (int)(Math.random()*10);
-                            onetime = true;
-                        }
-                        else {
-                            width2 = width2 + "#";
-                        }
+                    if (xx%2==0){
+                            count++;
+                            double probability= count/totalhashes;
+                            if (therandomnumber < probability && onetime == false){
+                                width2 = width2 + (int)(Math.random()*10);
+                                onetime = true;
+                            }
+                            else {
+                                width2 = width2 + "#";
+                            }
+                    }
+                    else {
+                        width2 = width2 + " ";
                     }
                 }
-                else {
-                    width2 = width2 + " ";
-                }
-                }
             }
-                String top= "+" + up + "+";
-                String side= "|" + width + "|";
-                String side2= "|" + width2+ "|";
+            String top= "+" + up + "+";
+            String side= "|" + width + "|";
+            String side2= "|" + width2+ "|";
                 if (alternaterealh>alternateh-1){
                     System.out.println (top);
                 }
