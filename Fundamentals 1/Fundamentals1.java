@@ -175,6 +175,10 @@ public class Fundamentals1
         String width="";
         String width2="";
         String up= "";
+        double totalhashes = ((h*w)+1)/2;
+        double therandomnumber = Math.random();
+        boolean onetime= false;
+        int indicator = 0;
         int alternateh= h+2;
         int x= w;
         int xx=w;
@@ -187,7 +191,16 @@ public class Fundamentals1
             if (alternaterealh%2!=0){
                 for (;x>0;x--) {
                 if (x%2!=0){
-                    width = width + "#";
+                    for(indicator=0;indicator>0;indicator++){
+                        double probability= indicator/totalhashes;
+                        if (therandomnumber < probability && onetime == false){
+                            width = width + (int)(Math.random()*10);
+                            onetime = true;
+                        }
+                        else {
+                            width = width + "#";
+                        }
+                    }
                 }
                 else {
                     width = width + " ";
@@ -197,7 +210,16 @@ public class Fundamentals1
             else if (alternaterealh%2==0){
                 for (;xx>0;xx--) {
                 if (xx%2==0){
-                    width2 = width2 + "#";
+                    for(indicator=0;indicator>0;indicator++){
+                        double probability= indicator/totalhashes;
+                        if (therandomnumber < probability && onetime == false){
+                            width2 = width2 + (int)(Math.random()*10);
+                            onetime = true;
+                        }
+                        else {
+                            width2 = width2 + "#";
+                        }
+                    }
                 }
                 else {
                     width2 = width2 + " ";
