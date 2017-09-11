@@ -227,7 +227,7 @@ public class Fundamentals1
             String top= "+" + up + "+";
             String side= "|" + width + "|";
             String side2= "|" + width2+ "|";
-                if (alternaterealh>alternateh-1){
+            if (alternaterealh>alternateh-1){
                     System.out.println (top);
                 }
                 else if (alternaterealh==1){
@@ -239,8 +239,45 @@ public class Fundamentals1
                     }
                     else if (alternaterealh%2==0){
                         System.out.println (side);
+                }
+            }     
+        }
+        }
+        public static void checkerboard2 (int h, int w){
+        String output= "";
+        boolean check= true;
+        double indicator= Math.random();
+        String top = "";
+        String up = "";
+        int placement = 0;
+        for (int width=0;width<w;width++){
+            up = up + "-";
+        }
+        top = "+" + up + "+\n";
+        for (int height=0;height<h;height++){
+            output = output + "|";
+            for (int width=0;width<w;width++){
+                boolean isHash = ((height % 2) + (width % 2)) != 1;
+                if (isHash){
+                    placement++;
+                    double nOfHash= ((h*w)+1)/2;
+                    double prob = placement/nOfHash;
+                    if (indicator < prob && check == true){
+                        int theRandomNumber= (int)(Math.random() * 10);
+                        output += theRandomNumber;
+                        check = false;
                     }
-                }     
+                    else{
+                        output += "#";
+                    }
+                }
+                else {
+                    output += " ";
+                }
             }
-        }      
+            output += "|\n";
+        }
+        output = top + output + top;
+        System.out.println (output);
+    }
     }
