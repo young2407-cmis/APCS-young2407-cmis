@@ -67,35 +67,46 @@ public class Fundamentals2{
     } //end printArray
     public static int lastItem(int[] array){
         return (array[array.length-1]);
-    }
+    } //end lastItem
     public static double lastItem(double[] array){
         return (array[array.length-1]);
-    }
+    } //end lastItem
     public static String lastItem(String[] array){
         return (array[array.length-1]);
-    }
+    } //end lastItem
     public static boolean lastItem(boolean[] array){
         return (array[array.length-1]);
-    }
+    } //end lastItem
     public static int middleItem(int[] array){
         return (array[(int)(array.length/2)]);
-    }
+    } //end middleItem
     public static double middleItem(double[] array){
         return (array[(int)(array.length/2)]);
-    }
+    } //end middleItem
     public static String middleItem(String[] array){
         return (array[(int)(array.length/2)]);
-    }
+    } //end middleItem
     public static boolean middleItem(boolean[] array){
         return (array[(int)(array.length/2)]);
-    }
+    } //end middleItem
     public static int[] randomInts(int n, int min, int max){
-        int[] output;
-        while (n--){
-            int random= ThreadLocalRandom.current().nextInt(min, max + 1);
-            int[] output + random;
+        int[] output = new int[n];
+        for(int i=0;i<n;i++){
+            int random= random.nextInt(max - min + 1) + min;
+            output[i] = random;
         }
         return output;
+    } //end randomInts
+    public static double[] randomDoubles(int n, double min, double max){
+        double[] output = new double[n];
+        for(int i=0;i<n;i++){
+            double random= random.nextInt(max - min + 1) + min;
+            output[i] = random;
+        } //end for 
+        return output;
+    } //end randomDoubles
+    public static type[] copy(type[] array){
+        for(int i=0;i<n;i++){
+        }
     }
-
-//} //end class Fundamentals2
+} //end class Fundamentals2
