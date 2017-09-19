@@ -1,4 +1,5 @@
 import java.util.concurrent.ThreadLocalRandom;
+import java.lang.*;
 public class Fundamentals2{
     public static void main(){
         int [] intList= {1,2,3,4,5,6};
@@ -12,6 +13,10 @@ public class Fundamentals2{
         printArray(intList,false);
         printArray(booleanList, false);
         System.out.println (middleItem(intList));
+        
+        int[] arraysss = pairs(8);
+        printArray(arraysss,false
+       );
     } //end main
     public static void printArray(int[] array, boolean skip){
         if (skip==true){
@@ -92,7 +97,7 @@ public class Fundamentals2{
     public static int[] randomInts(int n, int min, int max){
         int[] output = new int[n];
         for(int i=0;i<n;i++){
-            int random= random.nextInt(max - min + 1) + min;
+            int random= ThreadLocalRandom.current().nextInt(min, max+1);
             output[i] = random;
         }
         return output;
@@ -100,13 +105,45 @@ public class Fundamentals2{
     public static double[] randomDoubles(int n, double min, double max){
         double[] output = new double[n];
         for(int i=0;i<n;i++){
-            double random= random.nextInt(max - min + 1) + min;
+            double random= ThreadLocalRandom.current().nextDouble(min, max+1);
             output[i] = random;
         } //end for 
         return output;
     } //end randomDoubles
-    public static type[] copy(type[] array){
-        for(int i=0;i<n;i++){
+    public static int[] copy(int[] array){
+        int[] copyArray= new int[array.length];
+        for(int i=0;i<array.length;i++){
+            copyArray[i] = array[i];
         }
-    }
+        return copyArray;
+    } //end copy
+    public static double[] copy(double[] array){
+        double[] copyArray= new double[array.length];
+        for(int i=0;i<array.length;i++){
+            copyArray[i] = array[i];
+        }
+        return copyArray;
+    } //end copy
+    public static String[] copy(String[] array){
+        String[] copyArray= new String[array.length];
+        for(int i=0;i<array.length;i++){
+            copyArray[i] = array[i];
+        }
+        return copyArray;
+    } //end copy
+    public static boolean[] copy(boolean[] array){
+        boolean[] copyArray= new boolean[array.length];
+        for(int i=0;i<array.length;i++){
+            copyArray[i] = array[i];
+        }
+        return copyArray;
+    } //end copy
+    public static int[] pairs(int n){
+        int[] output = new int[n*2];
+        for(int i=0;i<output.length;i+=2){
+            output[i] = i+2;
+            output[i+1] = i+2;
+        }
+        return output;
+    } //end pairs
 } //end class Fundamentals2
