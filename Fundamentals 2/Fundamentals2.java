@@ -2,7 +2,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.lang.*;
 public class Fundamentals2{
     public static void main(){
-        int [] intList= {1,2,3,4,5,6};
+        int [] intList= {1,2,3,4,5,6,7,8};
         int [] intList2= {2,2,3,4,5,6};
         double[] doubleList= {1.3,5.2,9.8,0.2,7.4};
         String[] stringList= {"first","second","third","fourth","fifth"};
@@ -10,11 +10,11 @@ public class Fundamentals2{
         System.out.println (intList[0]);
         System.out.println (doubleList[2]);
         System.out.println (stringList[4]);
-        
+
         printArray(intList,false);
         printArray(booleanList, false);
         System.out.println (middleItem(intList));
-        
+
         int[] arraysss = pairs(7);
         printArray(arraysss,false);
         int[] concatr= merge(intList,intList2);
@@ -160,16 +160,14 @@ public class Fundamentals2{
     } //end concat
     public static int[] merge(int[] a, int[] b){
         int[] output= new int[a.length + b.length];
-        for(int i=0; i<a.length;i+=2){
-            for (int i2=0; i2<a.length;i2++){
-                output[i]= a[i2];
+        int shortLength=0;
+        for(int i=0; i<output.length;i++){
+            if(a.length<b.length){
+                shortLength+= a.length;
+            }
+            else{
+                shortLength+= b.length;
             }
         }
-        for(int i=1; i<b.length;i+=2){
-            for (int i2=0; i2<b.length;i2++){
-                output[i]= b[i2];
-            }
-        }
-        return output;
-    } //end merge
+    } //end Merge
 } //end class Fundamentals2
