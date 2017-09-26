@@ -3,7 +3,7 @@ import java.lang.*;
 public class Fundamentals2{
     public static void main(){
         int [] intList= {1,2,3,4,5,6,7,8};
-        int [] intList2= {2,2,3,4,5,6};
+        int [] intList2= {1,2,3,4,5,6};
         double[] doubleList= {1.3,5.2,9.8,0.2,7.4};
         String[] stringList= {"first","second","third","fourth","fifth"};
         boolean[] booleanList= {true, false, true, false, true};
@@ -17,8 +17,8 @@ public class Fundamentals2{
 
         int[] arraysss = pairs(7);
         printArray(arraysss,false);
-        int[] concatr= merge(intList,intList2);
-        printArray (concatr,false);
+        int[] merged= merge(intList,intList2);
+        printArray (merged,false);
     } //end main
     public static void printArray(int[] array, boolean skip){
         if (skip==true){
@@ -159,15 +159,20 @@ public class Fundamentals2{
         return output;
     } //end concat
     public static int[] merge(int[] a, int[] b){
-        int[] output= new int[a.length + b.length];
         int shortLength=0;
-        for(int i=0; i<output.length;i++){
-            if(a.length<b.length){
+        if(a.length<b.length){
                 shortLength+= a.length;
             }
             else{
                 shortLength+= b.length;
             }
+        int[] output= new int[shortLength*2];    
+        for(int i=0; i<output.length;i+=2){
+            for(int i2=0; i<shortLength;i++){
+                output[i]=a[i2];
+                output[i+1]=b[i2];
+            }
         }
+        return output;
     } //end Merge
 } //end class Fundamentals2
