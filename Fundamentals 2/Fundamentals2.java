@@ -2,8 +2,8 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.lang.*;
 public class Fundamentals2{
     public static void main(){
-        int [] intList= {1,2,3,4,5,6,7,8};
-        int [] intList2= {1,2,3,4,5,6};
+        int [] intList= {1,3,5,7,9};
+        int [] intList2= {2,4,6,8,10,12};
         double[] doubleList= {1.3,5.2,9.8,0.2,7.4};
         String[] stringList= {"first","second","third","fourth","fifth"};
         boolean[] booleanList= {true, false, true, false, true};
@@ -18,7 +18,6 @@ public class Fundamentals2{
         int[] arraysss = pairs(7);
         printArray(arraysss,false);
         int[] merged= merge(intList,intList2);
-        printArray (merged,false);
     } //end main
     public static void printArray(int[] array, boolean skip){
         if (skip==true){
@@ -159,20 +158,46 @@ public class Fundamentals2{
         return output;
     } //end concat
     public static int[] merge(int[] a, int[] b){
+        int totalLength=a.length+b.length;
         int shortLength=0;
+        int[] longerArray;
+        int[] output= new int[totalLength];   
+        int i2=0;
+        int i3=0;
         if(a.length<b.length){
-                shortLength+= a.length;
-            }
-            else{
-                shortLength+= b.length;
-            }
-        int[] output= new int[shortLength*2];    
-        for(int i=0; i<output.length;i+=2){
-            for(int i2=0; i<shortLength;i++){
-                output[i]=a[i2];
-                output[i+1]=b[i2];
-            }
+            shortLength+= a.length;
+            longerArray= b;
+        }
+        else{
+            shortLength+= b.length;
+            longerArray= a;
+        }
+        for(int i=0; i<shortLength;i++){
+            output[i2]=a[i];
+            output[i2+1]=b[i];
+            i2+=2;
+        }
+        for(int i4=shortLength*2; i4<totalLength; i4++){
+            output[i4]= longerArray[shortLength+i3];
+            i3++;
         }
         return output;
     } //end Merge
+    public static void reverse(int[] array){
+        int[] copyArray=copy(array);
+        for(int i=0, reversei=array.length-1; i<array.length && reversei>-1; i++, reversei--){
+            copyArray[i]=array[reversei];
+        }
+        array=copyArray;
+        printArray(array,false);
+    } //end reverse
+    public static int[] subArray(int[] array, int start, int stop){
+        int[] subArray= new int[start-stop-1];
+        int i2=0;
+        for(int i=start; i<stop;i++){
+            subArray[i2]=array[i];
+            i2++;
+        }
+        return subArray;
+    }
 } //end class Fundamentals2
