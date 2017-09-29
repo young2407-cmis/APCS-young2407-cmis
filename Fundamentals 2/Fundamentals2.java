@@ -3,6 +3,7 @@ import java.lang.*;
 public class Fundamentals2{
     public static void main(){
         int [] intList= {1,3,5,7,9};
+        int [] intList3= {2,4,1,9,11};
         int [] intList2= {2,4,6,8,10,12};
         double[] doubleList= {1.3,5.2,9.8,0.2,7.4};
         String[] stringList= {"first","second","third","fourth","fifth"};
@@ -18,6 +19,10 @@ public class Fundamentals2{
         int[] arraysss = pairs(7);
         printArray(arraysss,false);
         int[] merged= merge(intList,intList2);
+        int[] compare= compareArrays(intList, intList3);
+        printArray(compare,false);
+        int[] minimize= minimize(intList,3);
+        printArray(minimize,false);
     } //end main
     public static void printArray(int[] array, boolean skip){
         if (skip==true){
@@ -192,12 +197,54 @@ public class Fundamentals2{
         printArray(array,false);
     } //end reverse
     public static int[] subArray(int[] array, int start, int stop){
-        int[] subArray= new int[start-stop-1];
+        int[] subArray= new int[stop-start];
         int i2=0;
         for(int i=start; i<stop;i++){
             subArray[i2]=array[i];
             i2++;
         }
         return subArray;
+    } //end subArray
+    public static int[] compareArrays(int[] a, int[] b){
+        int counta=0;
+        int countb=0;
+        int[] result= new int[a.length];
+        for(int i=0; i<a.length;i++){
+            if(a[i]>b[i]){
+                counta++;
+            }
+            else if(a[i]>b[i]){
+                countb++;
+            }
+        }
+        if(counta>countb){
+            result= a;
+        }
+        else if(countb>counta){
+            result= b;
+        }
+        return result;
+    } //end class Fundamentals2
+    public static int[] minimize(int[] array, int threshold){
+        int[] newArray= new int[array.length];
+        for(int i=0;i<array.length;i++){
+            if(array[i]>threshold){
+                newArray[i]=threshold;
+            }
+            else{
+                newArray[i]=array[i];
+            }
+        }
+        return newArray;
+    } //end minimize
+    public static void maximize(int[] array, int threshold){
+        for(int i=0;i<array.length;i++){
+            if(array[i]<threshold){
+                array[i]=threshold;
+            }
+        }
+    } //end minimize
+    public static double[] maxMerge(double[] a, double[] b){
+        
     }
-} //end class Fundamentals2
+}
