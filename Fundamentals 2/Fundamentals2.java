@@ -245,6 +245,30 @@ public class Fundamentals2{
         }
     } //end minimize
     public static double[] maxMerge(double[] a, double[] b){
-        
-    }
-}
+        int shortLength=0; 
+        double[] longerArray;
+        if(a.length<b.length){
+            shortLength+= a.length;
+            longerArray= b;
+        }
+        else{
+            shortLength+= b.length;
+            longerArray= a;
+        }
+        double[] output= new double[longerArray.length];
+        int i3=0;
+        for(int i=0; i<shortLength;i++){
+            if (a[i] > b[i]){
+                output[i] = a[i];
+            }
+            else if (a[i] < b[i]){
+                output[i] = b[i];
+            }
+        }
+        for(int i2=shortLength; i2<output.length; i2++){
+            output[i2]= longerArray[shortLength+i3];
+            i3++;
+        }
+        return output;
+    } //end maxMerge
+} //end class
