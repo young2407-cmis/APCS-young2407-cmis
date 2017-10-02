@@ -21,12 +21,25 @@ public class Young1 extends Robot
      * isClearUp() => true means no block up
      * isClearDown() => true means no block down
      * getX() => returns x coordinate of robot
-     * get() => returns y coordinate of robot 
+     * getY() => returns y coordinate of robot 
      */
     public void behave(){
-        up();
-        if(isClearUp()==false){
+        int startingX=0;
+        int startingY=0;
+        if(isClearUp()==true){
+            up();
+        }        
+        if(isClearUp()==false || isClearDown()==false){
+            startingX= getX();
+        }
+        if(getX()<startingX){
             right();
+            if(isClearUp()==false){
+                down();
+            }
+            else if(isClearDown()==false){
+                up();
+            }
         }
     }
 }
