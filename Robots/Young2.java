@@ -1,9 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color;
-public class Young1 extends Robot
+public class Young2 extends Robot
 {
-    public Young1(){
-        super(Color.magenta);
+    public Young2(){
+        super(Color.black);
     }
 
     public void init(){
@@ -24,17 +24,17 @@ public class Young1 extends Robot
      * getY() => returns y coordinate of robot 
      */
     public void behave(){
-        if(isClearUp()==true && getX()%2!=0){
-            up();
+        if(isClearLeft()==true && getY()%2!=0){
+            left();
         }
-        else if(isClearUp()==false &&getX()%2!=0){
-            right();
-        }
-        else if(isClearDown()==true && getX()%2==0){
+        else if(isClearLeft()==false &&getY()%2!=0){
             down();
         }
-        else if(isClearDown()==false &&getX()%2==0){
+        else if(isClearRight()==true && getY()%2==0){
             right();
+        }
+        else if(isClearRight()==false &&getY()%2==0){
+            down();
         }
     }
 }
