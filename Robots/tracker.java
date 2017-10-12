@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color;
-public class Young2 extends Robot
+public class tracker extends Robot
 {
-    public Young2(){
+    public tracker(){
         super(Color.black);
     }
-
+    
     public void init(){
-
+        
     }
-
+    
     /**
      * What your robot can do:
      * right() => move 1 to the right
@@ -22,19 +22,15 @@ public class Young2 extends Robot
      * isClearDown() => true means no block down
      * getX() => returns x coordinate of robot
      * getY() => returns y coordinate of robot 
+     * public final int[] getData() => returns array of int data
+     * public final int getData(int idx) => returns int data from index idx
+     * public final void setData(int idx, int value) => sets value of data array at idx
+     * public final void setData(int[] newData) => replaces values in data array with values in newData
      */
+    public void spiral(){
+        
+    }
     public void behave(){
-        if(isClearLeft()==true && getY()%2!=0){
-            left();
-        }
-        else if(isClearLeft()==false &&getY()%2!=0){
-            down();
-        }
-        else if(isClearRight()==true && getY()%2==0){
-            right();
-        }
-        else if(isClearRight()==false &&getY()%2==0){
-            down();
-        }
+        
     }
 }
