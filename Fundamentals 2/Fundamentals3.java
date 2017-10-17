@@ -16,8 +16,8 @@ public class Fundamentals3{
                 {" ","#"," ","#"," ","#"," ","#"},
                 {"#"," ","#"," ","#"," ","#"," "},
                 {" ","#"," ","#"," ","#"," ","#"}};
-        snakePrint(literalArray1);
-
+                
+        replace(literalArray1, 3, 0);
     }
 
     public static void setValue(int[][] arr, int r, int c, int v){
@@ -82,21 +82,96 @@ public class Fundamentals3{
             }
         }
     }
-
-    public static void snakePrint(int[][] arr){
-        for(int y=0; y<arr.length; y++){
-            if(y%2!=0){
-                for(int x=0; x<arr[y].length; x++){
-                    System.out.print(arr[y][x]+" ");
+    
+    public static void print2DArray(String[][] array, boolean rowMajor){
+        if(rowMajor==true){
+            for(int y=0; y<array.length; y++){
+                for(int x=0; x<array.length; x++){
+                    System.out.print(array[y][x]+" ");
                 }
                 System.out.print("\n");
             }
-            else if(y%2==0){
-                for(int x=arr[y].length; x>0; x--){
-                    System.out.print(arr[y][x]+" ");
+        }
+        else{
+            for(int x=0; x<array.length; x++){
+                for(int y=0; y<array.length; y++){
+                    System.out.print(array[y][x]+" ");
                 }
                 System.out.print("\n");
             }
         }
     }
+    
+    public static void print2DArray(boolean[][] array, boolean rowMajor){
+        if(rowMajor==true){
+            for(int y=0; y<array.length; y++){
+                for(int x=0; x<array.length; x++){
+                    System.out.print(array[y][x]+" ");
+                }
+                System.out.print("\n");
+            }
+        }
+        else{
+            for(int x=0; x<array.length; x++){
+                for(int y=0; y<array.length; y++){
+                    System.out.print(array[y][x]+" ");
+                }
+                System.out.print("\n");
+            }
+        }
+    }
+
+    public static void print2DArray(double[][] array, boolean rowMajor){
+        if(rowMajor==true){
+            for(int y=0; y<array.length; y++){
+                for(int x=0; x<array.length; x++){
+                    System.out.print(array[y][x]+" ");
+                }
+                System.out.print("\n");
+            }
+        }
+        else{
+            for(int x=0; x<array.length; x++){
+                for(int y=0; y<array.length; y++){
+                    System.out.print(array[y][x]+" ");
+                }
+                System.out.print("\n");
+            }
+        }
+    }
+    
+    public static void snakePrint(int[][] arr){
+        for(int y=0; y<arr.length; y++){
+            if(y%2==0){
+                for(int x=0; x<arr[y].length; x++){
+                    System.out.print(arr[y][x]+" ");
+                }
+            }
+            else if(y%2!=0){
+                for(int x=arr[y].length-1; x>-1; x--){
+                    System.out.print(arr[y][x]+" ");
+                }
+            }
+        }
+    }
+
+    /*public static String[][] locate(String[][] arr){
+    int numOfHashes= (arr.length * arr[0].length)/2;
+    int theRandomNumber= (int)(Math.random() * 10);
+    double prob= Math.random;
+
+    }*/
+    public static int[][] replace(int[][] array, int threshold, int newValue){
+        for(int y=0; y<array.length; y++){
+            for(int x=0; x<array[y].length; x++){
+                if(array[y][x]>threshold){
+                    array[y][x]= newValue;
+                }
+            }
+        }
+        return array;
+    }
+    
+    
+    
 } 
