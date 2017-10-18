@@ -18,6 +18,10 @@ public class Fundamentals3{
                 {" ","#"," ","#"," ","#"," ","#"}};
                 
         replace(literalArray1, 3, 0);
+        
+        shift(literalArray2, 2);
+        
+        print2DArray(literalArray2,true);
     }
 
     public static void setValue(int[][] arr, int r, int c, int v){
@@ -172,6 +176,16 @@ public class Fundamentals3{
         return array;
     }
     
-    
+    public static double[][] shift(double[][] arr, int row){
+        for(int y=arr.length-1; y>row-1;y--){
+            arr[y]=arr[y-1];
+        }
+        for(int y2=0; y2<row; y2++){
+            for(int x=0; x<arr[y2].length; x++){
+                arr[y2][x]=(Math.random() * 10);
+            }
+        }
+        return arr;
+    }
     
 } 
