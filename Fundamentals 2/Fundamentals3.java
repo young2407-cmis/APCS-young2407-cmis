@@ -16,12 +16,8 @@ public class Fundamentals3{
                 {" ","#"," ","#"," ","#"," ","#"},
                 {"#"," ","#"," ","#"," ","#"," "},
                 {" ","#"," ","#"," ","#"," ","#"}};
-                
-        replace(literalArray1, 3, 0);
-        
-        shift(literalArray2, 2);
-        
-        print2DArray(literalArray2,true);
+
+        print2DArray(locate(checkerboard),false);
     }
 
     public static void setValue(int[][] arr, int r, int c, int v){
@@ -86,7 +82,7 @@ public class Fundamentals3{
             }
         }
     }
-    
+
     public static void print2DArray(String[][] array, boolean rowMajor){
         if(rowMajor==true){
             for(int y=0; y<array.length; y++){
@@ -105,7 +101,7 @@ public class Fundamentals3{
             }
         }
     }
-    
+
     public static void print2DArray(boolean[][] array, boolean rowMajor){
         if(rowMajor==true){
             for(int y=0; y<array.length; y++){
@@ -143,7 +139,7 @@ public class Fundamentals3{
             }
         }
     }
-    
+
     public static void snakePrint(int[][] arr){
         for(int y=0; y<arr.length; y++){
             if(y%2==0){
@@ -159,12 +155,30 @@ public class Fundamentals3{
         }
     }
 
-    /*public static String[][] locate(String[][] arr){
-    int numOfHashes= (arr.length * arr[0].length)/2;
-    int theRandomNumber= (int)(Math.random() * 10);
-    double prob= Math.random;
+    public static String[][] locate(String[][] arr){
+        int numOfHashes= (arr.length * arr[1].length)/2;
+        int theRandomNumber= (int)(Math.random() * 10);
+        int prob= (int)(Math.random()*numOfHashes);
+        System.out.println(prob);
+        int numOfHashesCount= 0;
+        boolean check= false;
+        for(int y=0; y<arr.length;y++){
+            for(int x=0; x<arr[y].length; x++){
+                if(arr[y][x].equals("#") && check==false){
+                    System.out.println(prob);
+                    System.out.println(numOfHashesCount);
+                    if(prob == numOfHashesCount){
+                        System.out.println("hello ut got");
+                        arr[y][x]= Integer.toString(theRandomNumber);
+                        numOfHashesCount++;
+                        check = true;
+                    }
+                }
+            }
+        }
+        return arr;
+    }
 
-    }*/
     public static int[][] replace(int[][] array, int threshold, int newValue){
         for(int y=0; y<array.length; y++){
             for(int x=0; x<array[y].length; x++){
@@ -175,7 +189,7 @@ public class Fundamentals3{
         }
         return array;
     }
-    
+
     public static double[][] shift(double[][] arr, int row){
         for(int y=arr.length-1; y>row-1;y--){
             arr[y]=arr[y-1];
@@ -187,5 +201,5 @@ public class Fundamentals3{
         }
         return arr;
     }
-    
+
 } 
