@@ -17,7 +17,7 @@ public class Fundamentals3{
                 {"#"," ","#"," ","#"," ","#"," "},
                 {" ","#"," ","#"," ","#"," ","#"}};
 
-        print2DArray(locate(checkerboard),false);
+        print2DArray(rotate(literalArray2),false);
     }
 
     public static void setValue(int[][] arr, int r, int c, int v){
@@ -159,18 +159,14 @@ public class Fundamentals3{
         int numOfHashes= (arr.length * arr[1].length)/2;
         int theRandomNumber= (int)(Math.random() * 10);
         int prob= (int)(Math.random()*numOfHashes);
-        System.out.println(prob);
         int numOfHashesCount= 0;
         boolean check= false;
         for(int y=0; y<arr.length;y++){
             for(int x=0; x<arr[y].length; x++){
                 if(arr[y][x].equals("#") && check==false){
-                    System.out.println(prob);
-                    System.out.println(numOfHashesCount);
+                    numOfHashesCount++;
                     if(prob == numOfHashesCount){
-                        System.out.println("hello ut got");
                         arr[y][x]= Integer.toString(theRandomNumber);
-                        numOfHashesCount++;
                         check = true;
                     }
                 }
@@ -200,6 +196,16 @@ public class Fundamentals3{
             }
         }
         return arr;
+    }
+
+    public static double[][] rotate(double[][] arr){
+        double arr2[][]= arr;
+        for(int y=0; y<arr.length-1; y++){
+            for(int x=0; x<arr[y].length; x++){
+                arr2[x][y]=arr[y][x];
+            }
+        }
+        return arr2;
     }
 
 } 
