@@ -16,7 +16,7 @@ public class Fundamentals3{
                 {" ","#"," ","#"," ","#"," ","#"},
                 {"#"," ","#"," ","#"," ","#"," "},
                 {" ","#"," ","#"," ","#"," ","#"}};
-        rotate(literalArray2);        
+        analyze(literalArray2,4);        
                 
                 
     } //end setValue
@@ -210,14 +210,16 @@ public class Fundamentals3{
         return arr2;
     } //end rotate
 
-    /*public static boolean[][] analyze(double[][] array, double threshold){
-        boolean[][] arr2=  new boolean[array.length][array.]
-        for(int y=0; y<array.length-1; y++){
+    public static boolean[][] analyze(double[][] array, double threshold){
+        boolean[][] arr2=  new boolean[array.length][array[0].length];
+        for(int y=0; y<array.length; y++){
             for(int x=0; x<array[y].length; x++){
                 if(array[y][x]>threshold){
                     arr2[y][x]=true;
                 }
             }
         }
-        return arr2;*/
+        print2DArray(arr2, true);
+        return arr2;
     } //end analyze
+}
