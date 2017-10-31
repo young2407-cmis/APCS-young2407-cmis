@@ -196,6 +196,7 @@ public class Fundamentals3{
                 arr[y2][x]=(Math.random() * 10);
             }
         }
+        print2DArray(arr, true);
         return arr;
     } //end rotate
 

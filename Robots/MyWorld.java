@@ -2,7 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.lang.reflect.*;
 public class MyWorld extends World
 {
-    Class[] robotClasses = new Class[]{Michael.class};
+    Class[] robotClasses = new Class[]{Young1.class};
     public MyWorld() throws NoSuchMethodException
     {    
         super(Greenfoot.getRandomNumber(50)+50, Greenfoot.getRandomNumber(50)+50, 5); 

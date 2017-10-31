@@ -2,7 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color;
 public class Young1 extends Robot
 {
-    public RobotTemplate(){
+    public Young1(){
         super(Color.black);
     }
 
@@ -39,31 +39,58 @@ public class Young1 extends Robot
      *
      */
 
-    public final void setMaximumYData(){
-        if (isClearDown()==true){
-            down();
-        }
-        else{
-            int x= getX();
-            int y= getY();
-            setData(0,x);
-            setData(1,y);
+    public void setMaximumYData(){
+        boolean check = false;
+        if(check == false){
+            if (isClearDown()==true){
+                down();
+            }
+            else{
+                int x= getX();
+                int y= getY();
+                setData(0,x);
+                setData(1,y);
+            }
+            check = true;
         }
     }
 
-    public void verticalCheck(){}
-    
-    public boolean boxCheck(){
-        if (isClearDown()==false && getY()!=getData(1)){
-            return true;
+    public void goToStartingPoint(){
+        if(isClearLeft()==true){
+            left();
         }
-        else if(isClearUp()==false && getY()!=0){
-            return true;
+        if(isClearLeft()==false && isClearUp()==true){
+            up();
         }
     }
-    
-    public void behave(){
-        setMaximumYData();
-        
+
+    public void locateBox(){
+        if(getY()%2!=0 && isClearRight() == true){
+            right();
+            if(isClearRight()==false){
+                down();
+                if(getY()%2==0 && isClearLeft() == true){
+                    left();
+                    if(isClearLeft()==false){
+                        down();
+                    }
+                }
+            }
+        }
+    }
+
+    public boolean boxCheck(){
+        boolean theReturn=false;
+        if (isClearDown()==false && getY()!=getData(1)){
+            theReturn=true;
+        }
+        else if(isClearUp()==false && getY()!=0){
+            theReturn=true;
+        }
+        return theReturn;
+    }
+
+    public final void behave(){
+        locateBox();
     }
 }
