@@ -17,10 +17,8 @@ public class Fundamentals3{
                 {"#"," ","#"," ","#"," ","#"," "},
                 {" ","#"," ","#"," ","#"," ","#"}};
         analyze(literalArray2,4);        
-                
-                
-    } //end setValue
 
+    } //end setValue
     public static void setValue(int[][] arr, int r, int c, int v){
         arr[r][c]=v;
     } //end setValue

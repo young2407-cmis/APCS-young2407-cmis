@@ -4,11 +4,11 @@ comment1.params=
 comment1.target=Young1()
 comment2.params=
 comment2.target=void\ init()
-comment3.params=
-comment3.target=void\ setMaximumYData()
-comment3.text=\n\ What\ your\ robot\ can\ do\:\n\ right()\ \=>\ move\ 1\ to\ the\ right\n\ left()\ \=>\ move\ 1\ to\ the\ left\n\ up()\ \=>\ move\ 1\ up\n\ down()\ \=>\ move\ 1\ down\n\ isClearRight()\ \=>\ true\ means\ no\ block\ to\ the\ right\n\ isClearRight()\ \=>\ true\ means\ no\ block\ to\ the\ left\n\ isClearUp()\ \=>\ true\ means\ no\ block\ up\n\ isClearDown()\ \=>\ true\ means\ no\ block\ down\n\ getX()\ \=>\ returns\ x\ coordinate\ of\ robot\n\ getY()\ \=>\ returns\ y\ coordinate\ of\ robot\ \n\ public\ final\ int[]\ getData()\ \=>\ returns\ array\ of\ int\ data\n\ public\ final\ int\ getData(int\ idx)\ \=>\ returns\ int\ data\ from\ index\ idx\n\ public\ final\ void\ setData(int\ idx,\ int\ value)\ \=>\ sets\ value\ of\ data\ array\ at\ idx\n\ public\ final\ void\ setData(int[]\ newData)\ \=>\ replaces\ values\ in\ data\ array\ with\ values\ in\ newData\n\nStage1()\nStage2()\nStage3()\nStage4()\nStage5()\nStage6()\nStage7()\nStage8()\nStage9()\n\n
-comment4.params=
-comment4.target=void\ goToStartingPoint()
+comment3.params=check
+comment3.target=void\ setMaximumYData(boolean)
+comment3.text=\n\ What\ your\ robot\ can\ do\:\n\ right()\ \=>\ move\ 1\ to\ the\ right\n\ left()\ \=>\ move\ 1\ to\ the\ left\n\ up()\ \=>\ move\ 1\ up\n\ down()\ \=>\ move\ 1\ down\n\ isClearRight()\ \=>\ true\ means\ no\ block\ to\ the\ right\n\ isClearRight()\ \=>\ true\ means\ no\ block\ to\ the\ left\n\ isClearUp()\ \=>\ true\ means\ no\ block\ up\n\ isClearDown()\ \=>\ true\ means\ no\ block\ down\n\ getX()\ \=>\ returns\ x\ coordinate\ of\ robot\n\ getY()\ \=>\ returns\ y\ coordinate\ of\ robot\ \n\ public\ final\ int[]\ getData()\ \=>\ returns\ array\ of\ int\ data\n\ public\ final\ int\ getData(int\ idx)\ \=>\ returns\ int\ data\ from\ index\ idx\n\ public\ final\ void\ setData(int\ idx,\ int\ value)\ \=>\ sets\ value\ of\ data\ array\ at\ idx\n\ public\ final\ void\ setData(int[]\ newData)\ \=>\ replaces\ values\ in\ data\ array\ with\ values\ in\ newData\n\nStage1()\nStage2()\nStage3()\nStage4()\nStage5()\nStage6()\nStage7()\nStage8()\nStage9()\n\n\n\n
+comment4.params=check
+comment4.target=void\ goToStartingPoint(boolean)
 comment5.params=
 comment5.target=void\ locateBox()
 comment6.params=

@@ -37,10 +37,11 @@ public class Young1 extends Robot
      *Stage8()
      *Stage9()
      *
+     *
+     *
      */
 
-    public void setMaximumYData(){
-        boolean check = false;
+    public void setMaximumYData(boolean check){
         if(check == false){
             if (isClearDown()==true){
                 down();
@@ -50,17 +51,22 @@ public class Young1 extends Robot
                 int y= getY();
                 setData(0,x);
                 setData(1,y);
+                check = true;
             }
-            check = true;
         }
     }
 
-    public void goToStartingPoint(){
-        if(isClearLeft()==true){
-            left();
-        }
-        if(isClearLeft()==false && isClearUp()==true){
-            up();
+    public void goToStartingPoint(boolean check){
+        if(check==false){
+            if(isClearLeft()==true && isClearDown()==false){
+                left();
+            }
+            else if(isClearLeft()==false && isClearUp()==true){
+                up();
+                if(isClearUp()==false){
+                    check = true;
+                }
+            }
         }
     }
 
@@ -91,6 +97,7 @@ public class Young1 extends Robot
     }
 
     public final void behave(){
-        locateBox();
+        setMaximumYData(false);
+        goToStartingPoint(false);
     }
 }
