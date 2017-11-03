@@ -27,77 +27,68 @@ public class Young1 extends Robot
      * public final void setData(int idx, int value) => sets value of data array at idx
      * public final void setData(int[] newData) => replaces values in data array with values in newData
      *
-     *Stage1()
-     *Stage2()
-     *Stage3()
-     *Stage4()
-     *Stage5()
-     *Stage6()
-     *Stage7()
-     *Stage8()
-     *Stage9()
-     *
-     *
-     *
+     *0 Stages (SetMaximumYData(), goToStartingPoint())
+     *1 MaxY
+     *2 X
+     *3
+     *4
      */
 
-    public void setMaximumYData(boolean check){
-        if(check == false){
-            if (isClearDown()==true){
+    public void setMaximumYData(){
+        if(getData(0)==0){
+            if (isClearDown()==true ){
                 down();
             }
             else{
-                int x= getX();
                 int y= getY();
-                setData(0,x);
                 setData(1,y);
-                check = true;
+                setData(0,1);
             }
         }
     }
 
-    public void goToStartingPoint(boolean check){
-        if(check==false){
-            if(isClearLeft()==true && isClearDown()==false){
+    public void goToStartingPoint(){
+        if(getData(0)==1){
+            if(isClearLeft()==true){
                 left();
             }
-            else if(isClearLeft()==false && isClearUp()==true){
+            else if(isClearUp()==true){
                 up();
                 if(isClearUp()==false){
-                    check = true;
+                    setData(0,2);
                 }
             }
         }
     }
 
     public void locateBox(){
-        if(getY()%2!=0 && isClearRight() == true){
-            right();
-            if(isClearRight()==false){
-                down();
-                if(getY()%2==0 && isClearLeft() == true){
-                    left();
-                    if(isClearLeft()==false){
-                        down();
-                    }
-                }
-            }
+        int x;
+        if(isClearUp() == false || isClearDown() == false){
+            x= getX();
         }
+        
     }
 
     public boolean boxCheck(){
-        boolean theReturn=false;
-        if (isClearDown()==false && getY()!=getData(1)){
+        boolean theReturn= false;
+        if (isClearDown()==false && getY()!= getData(0)){
             theReturn=true;
         }
-        else if(isClearUp()==false && getY()!=0){
+        else if(isClearUp()==false && getY()!= getData(0)){
+            theReturn=true;
+        }
+        else if(isClearRight()==false && getY()!= getData(0)){
+            theReturn=true;
+        }
+        else if(isClearLeft()==false && getY()!=getData(0)){
             theReturn=true;
         }
         return theReturn;
     }
 
     public final void behave(){
-        setMaximumYData(false);
-        goToStartingPoint(false);
+        setMaximumYData(); //stage1
+        goToStartingPoint(); 
+        locateBox();
     }
 }
