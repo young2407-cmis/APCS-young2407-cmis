@@ -1,4 +1,4 @@
-public class BubbleSort
+public class SelectionSort
 {
     public static void main(String[] args){
         int[] numbers = new int[15];
@@ -18,20 +18,19 @@ public class BubbleSort
     }
 
     public static void sort(int[] array){
-        boolean check= true;
-        while(check){
-            check=false;
-            for(int i=0; i<array.length-1; i++){
-                int iplus= i+1;
-                if(array[i]>array[iplus]){
-                    check=true;
-                    int var1= array[i];
-                    int var2= array[iplus];
-                    array[i]= var2;
-                    array[iplus]= var1;
+        int lowest=0;
+        int lindex=0;
+        for(int i=0; i<array.length-1;i++){
+            for(int i2=i; i2<array.length-1; i2++){
+                lowest= array[i];
+                if(lowest>array[i2]){
+                    lowest= array[i2];
+                    lindex= i2;
                 }
             }
+            int swap1= array[i];
+            array[i]= lowest;
+            lindex= swap1;
         }
     }
 }
-
