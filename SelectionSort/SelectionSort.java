@@ -20,9 +20,9 @@ public class SelectionSort
     public static void sort(int[] array){
         int lowest=0;
         int lindex=0;
-        for(int i=0; i<array.length-1;i++){
-            for(int i2=i; i2<array.length-1; i2++){
-                lowest= array[i];
+        for(int i=0; i<array.length;i++){
+            lowest= array[i];
+            for(int i2=i; i2<array.length; i2++){
                 if(lowest>array[i2]){
                     lowest= array[i2];
                     lindex= i2;
@@ -30,7 +30,7 @@ public class SelectionSort
             }
             int swap1= array[i];
             array[i]= lowest;
-            lindex= swap1;
+            array[lindex]= swap1;
         }
     }
 }
