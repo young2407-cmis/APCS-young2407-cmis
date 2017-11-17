@@ -19,12 +19,11 @@ public class InsertionSort
 
     public static void sort(int[] array){
         for(int i=1; i<array.length; i++){
-            for(int i2=i-1; i2>0; i2--){
-                if(array[i]<array[i2]){
-                    int variable1= array[i];
-                    int variable2= array[i2];
-                    array[i2]= variable1;
-                    array[i]= variable2;
+            int holdCard= array[i];
+            for(int i2=i; i2>=0; i2--){
+                if(holdCard<array[i2]){
+                    array[i2+1]=array[i2];
+                    array[i2]= holdCard;
                 }
             }
         }
