@@ -18,7 +18,9 @@ public class MergeClass2nd
             return array;
         }
         else{
-            
+            int[][] splitted=(split(array));
+            int[] arraya=splitted[0];
+            int[] arrayb=splitted[1];
         }        
         return array;
     }
