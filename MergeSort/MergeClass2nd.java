@@ -14,6 +14,12 @@ public class MergeClass2nd
     }
 
     public static int[] mergeSort(int[] array){
+        if(array.length==1){
+            return array;
+        }
+        else{
+            
+        }        
         return array;
     }
 
@@ -22,22 +28,38 @@ public class MergeClass2nd
         int a=0;
         int b=0;
         for(int i=0;i<returnArray.length;i++){
-            if(arraya[a]<arrayb[b]){
-                returnArray[i]= arraya[a];
-                if(a<arraya.length-1){
-                    a++;
-                }       
+            if(a<arraya.length && b < arrayb.length){
+                if(arraya[a]<arrayb[b]){
+                    if(a<arraya.length){
+                        returnArray[i]= arraya[a];
+                        a++;
+                    }
+                }
+                else{
+                    if(b<arrayb.length){
+                        returnArray[i]= arrayb[b];
+                        b++;
+                    }
+                }
             }
             else{
-                returnArray[i]= arrayb[b];
-                if(b<arrayb.length-1){
-                    b++;
+                if(a==arraya.length){
+                    if(b<arrayb.length){
+                        returnArray[i]= arrayb[b];
+                        b++;
+                    }
+                }
+                else if(b==arrayb.length){
+                    if(a<arraya.length){
+                        returnArray[i]= arraya[a];
+                        a++;
+                    }
                 }
             }
         }
         return returnArray;
     }    
-    
+
     public static int[][] split(int[]array){
         int[][] return2DArray= {firstHalf(array),secondHalf(array)};
         return return2DArray;
