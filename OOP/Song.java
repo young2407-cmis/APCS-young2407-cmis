@@ -11,13 +11,13 @@ public class Song{
     }
 
     //three
-    public Song(String name, double length, boolean gender){
-        name = "Lemonade";
-        length = 4;
-        gender= true;
+    public Song(String nname, double llength, boolean ggender){
+        this.name = nname;
+        this.length = llength;
+        this.gender = ggender;
     }
     
-    
+    //toString
     public String toString(){
         String rreturn = "";
         rreturn += "Name: " + name + "\n";
