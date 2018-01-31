@@ -1,24 +1,46 @@
 public class Student{
     String firstname;
     String lastname;
-    int age;
-    double 
-    
+    int grade;
+    boolean isMale;
+       
     public String toString(){
         String rreturn = "";
-        rreturn += firstname + " " + lastname + " is in " + " 
+        String gender = "";
+        String sgrade = "";
+        if (isMale == true){
+            gender = "male";
+        }
+        else{
+            gender = "female";
+        }
+        if(grade == 9){
+            sgrade = "freshman";
+        }
+        else if (grade == 10){
+            sgrade = "sophomore";
+        }
+        else if (grade == 11){
+            sgrade = "junior";
+        }
+        else if (grade == 12){
+            sgrade = "senior";
+        }
+        rreturn += firstname + " " + lastname + " is a " + gender + " " + sgrade + "."; 
         return rreturn;
     }
     
-    public Clock(){
-        hour = 0;
-        min = 0;
-        sec = 0;
+    public Student(){
+        firstname = "Rachel";
+        lastname = "Perry";
+        grade = 12;
+        isMale = false;
     }
     
-    public Clock(int hhour, int mmin, int ssec){
-        this.hour = hhour;
-        this.min = mmin;
-        this.sec = ssec;
+    public Student(String ffirstname, String llastname, int ggrade, boolean iisMale){
+        this.firstname = ffirstname;
+        this.lastname = llastname;
+        this.grade = ggrade;
+        this.isMale = iisMale;
     }
 }

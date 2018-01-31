@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=instruments
+comment1.params=
+comment1.target=instruments()
+comment2.params=ffam\ rangefam
+comment2.target=instruments(java.lang.String,\ int)
+numComments=3
