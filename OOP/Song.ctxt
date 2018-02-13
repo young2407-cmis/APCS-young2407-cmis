@@ -2,8 +2,14 @@
 comment0.target=Song
 comment1.params=
 comment1.target=Song()
-comment2.params=nname\ llength\ ggender
-comment2.target=Song(java.lang.String,\ double,\ boolean)
+comment2.params=nname\ llength\ ggender\ yearReleased
+comment2.target=Song(java.lang.String,\ int,\ boolean,\ int)
 comment3.params=
 comment3.target=java.lang.String\ toString()
-numComments=4
+comment4.params=seconds
+comment4.target=java.lang.String\ convertToMinSec(int)
+comment5.params=
+comment5.target=int\ getYearReleased()
+comment6.params=yearReleased
+comment6.target=void\ setYearReleased(int)
+numComments=7

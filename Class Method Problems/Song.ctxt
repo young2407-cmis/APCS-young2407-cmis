@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Song
+comment1.params=
+comment1.target=Song()
+comment2.params=
+comment2.target=int\ getYearReleased()
+comment3.params=yearReleased
+comment3.target=void\ setYearReleased(int)
+comment4.params=seconds
+comment4.target=java.lang.String\ convertToMinSec(int)
+numComments=5
