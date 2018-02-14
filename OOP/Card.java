@@ -1,32 +1,32 @@
 public class Card
 {
-    String name;
+    boolean isFirst;
     int cardValue;
-    String cardSuit;
     public Card()
     {
-        name = "";
+        isFirst = false;
         cardValue = 0;
-        cardSuit = "";
     }
-    
-    public Card(String nname, int ccardValue, int ccardSuit)
+
+    public Card(boolean iisFirst, int ccardValue)
     {
-        this.name = nname;
-        this.cardValue = ccardValue;
-        String sCardSuit = "";
-        if(ccardSuit==1){
-            this.cardSuit = "Clover";
+        this.isFirst = iisFirst;
+        if(ccardValue>10){
+            this.cardValue=10;
         }
-        else if(ccardSuit == 2){
-            
+        else{
+            this.cardValue = ccardValue;
         }
     }
-    
+
     public String toString(){
         String rreturn = "";
-        rreturn += name+"\n" + cardValue+"\n"+cardSuit;
+        if(this.isFirst = true){
+            rreturn = "First Card Value: " + this.cardValue;
+        }
+        else{
+            rreturn = "Second Card Value: " + this.cardValue;
+        }
         return rreturn;
     }
-    
 }

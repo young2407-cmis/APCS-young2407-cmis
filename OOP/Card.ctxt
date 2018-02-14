@@ -2,8 +2,8 @@
 comment0.target=Card
 comment1.params=
 comment1.target=Card()
-comment2.params=nname\ ccardValue\ ccardSuit
-comment2.target=Card(java.lang.String,\ int,\ int)
+comment2.params=iisFirst\ ccardValue
+comment2.target=Card(boolean,\ int)
 comment3.params=
 comment3.target=java.lang.String\ toString()
 numComments=4
