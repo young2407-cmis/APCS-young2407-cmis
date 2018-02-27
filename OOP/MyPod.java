@@ -2,16 +2,25 @@ import java.util.ArrayList;
 public class MyPod{
     String color;
     double memory;
-    Song[] songLibrary= new Song[3];
+    public Song[] songLibrary;
     
     public MyPod(){
         color = "";
         memory = 0.0;
     }
 
-    public MyPod(String color, double memory, Song[] songLibrary){
+    public MyPod(String color){
+        this();
         this.color = color;
+    }
+    
+    public MyPod(String color, double memory){
+        this(color);
         this.memory = memory;
+    }   
+    
+    public MyPod(String color, double memory, Song[] songLibrary){
+        this(color, memory);
         this.songLibrary = songLibrary;
     }    
     
