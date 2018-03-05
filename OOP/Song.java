@@ -1,5 +1,6 @@
 public class Song{
     private String name;
+    private String artist;
     private int lengthInSeconds;
     private boolean isMale;
     private int yearReleased;
@@ -10,28 +11,33 @@ public class Song{
         lengthInSeconds = 0;
         isMale = false;
         yearReleased = 0;
+        artist = "";
     }
 
     public Song(String name){
         this();
         this.name = name;
     }
-
-    public Song(String name, int length){
+    
+    public Song(String name, String artist){
         this(name);
-        this.lengthInSeconds= length;
+        this.artist = artist;
+    }
+
+    public Song(String name, String artist, int lengthInSeconds){
+        this(name, artist);
+        this.lengthInSeconds= lengthInSeconds;
     }
     
-    public Song(String name, int length, boolean isMale){
-        this(name, length);
+    
+    public Song(String name, String artist, int lengthInSeconds, boolean isMale){
+        this(name, artist, lengthInSeconds);
         this.isMale= isMale;
     }
 
-    public Song(String nname, int llength, boolean isMale, int yearReleased){
-        this.name = nname;
-        this.lengthInSeconds = llength;
-        this.isMale = isMale;
-        this.yearReleased = yearReleased;
+    public Song(String name, String artist, int lengthInSeconds, boolean isMale, int released){
+        this(name, artist, lengthInSeconds,isMale);
+        this.yearReleased = released;
     }
 
     //toString

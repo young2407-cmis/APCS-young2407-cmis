@@ -1,14 +1,14 @@
 public class SongDRIVER
 {
     public static void main(){
-        Song song1 = new Song();       
-        System.out.println(song1);
+        Song song = new Song();       
+        System.out.println(song);
         
-        song1.setYearReleased(2016);
-        System.out.println(song1.getYearReleased());
+        song.setYearReleased(2016);
+        System.out.println(song.getYearReleased());
         
-        Song song2 = new Song("Lemonade",200,true,2016);
-        System.out.println(song2);
+        Song song1 = new Song("Lemonade", "Iris Temple", 200,true,2016);
+        Song song2 = new Song("Neu Roses", "Daniel Caesar", 181,true,2017);
         
     }
 }
