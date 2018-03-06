@@ -7,6 +7,7 @@ public class MyPod{
     public MyPod(){
         color = "";
         memory = 0.0;
+        songLibrary = new Song[3];
     }
 
     public MyPod(String color){
@@ -28,9 +29,9 @@ public class MyPod{
         String output = "";
         output += "Color: " + this.color + "\n";
         output += "Memory: " + this.memory + "\n";
-        output += "Songs: "; 
+        output += "Songs: \n"; 
         for(Song song : songLibrary){
-            output += song + ", ";
+            output += song + "\n" ;
         }
         return output;
     }

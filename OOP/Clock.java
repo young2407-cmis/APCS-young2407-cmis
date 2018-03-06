@@ -16,6 +16,11 @@ public class Clock{
         sec = 0;
     }
     
+    public Clock(int hhour){
+        this();
+        this.hour = hhour;       
+    }
+    
     public Clock(int hhour, int mmin, int ssec){
         this.hour = hhour;
         this.min = mmin;

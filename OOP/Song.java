@@ -44,6 +44,7 @@ public class Song{
     public String toString(){
         String rreturn = "";
         rreturn += "Name: " + name + "\n";
+        rreturn += "Artist: " + artist + "\n";
         rreturn += convertToMinSec(lengthInSeconds);
         rreturn += "Year Released: " + yearReleased + "\n";
         if(isMale == true){
@@ -58,7 +59,7 @@ public class Song{
     public String convertToMinSec(int seconds){
         int min= seconds/60;
         int sec= seconds%60;
-        return "Length in Minutes: "+ min+ ":" + sec + "\n";       
+        return "Length: "+ min+ ":" + sec + "\n";       
     }
 
     public int getYearReleased(){
