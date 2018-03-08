@@ -21,9 +21,13 @@ public class Clock{
         this.hour = hhour;       
     }
     
-    public Clock(int hhour, int mmin, int ssec){
-        this.hour = hhour;
+    public Clock(int hhour, int mmin){
+        this(hhour);
         this.min = mmin;
+    }
+      
+    public Clock(int hhour, int mmin, int ssec){
+        this(hhour,mmin);
         this.sec = ssec;
     }
     
