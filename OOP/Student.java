@@ -55,6 +55,10 @@ public class Student{
         this.grades[4] = socialScienceGrade;
     }
     
+    public String getName(){
+         return this.firstname + this.lastname;
+    }
+    
     public double calcGPA(){
         int gpa = 0;
         for(int i=0; i<5; i++){

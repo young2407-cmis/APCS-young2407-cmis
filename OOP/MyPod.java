@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 public class MyPod{
-    String color;
-    double memory;
-    public Song[] songLibrary;
+    private String color;
+    private double memory;
+    private Song[] songLibrary;
     
     public MyPod(){
         color = "";

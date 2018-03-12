@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 public class ClockStore
 {
-    ArrayList<Clock> clocksInStock = new ArrayList<Clock>();
-
+    private ArrayList<Clock> clocksInStock = new ArrayList<Clock>();
+    
     public ClockStore(){
         ;
     } 
