@@ -2,6 +2,10 @@
 comment0.target=Athlete
 comment1.params=name
 comment1.target=Athlete(java.lang.String)
-comment2.params=x\ y
-comment2.target=boolean\ move(int,\ int)
-numComments=3
+comment2.params=skill
+comment2.target=boolean\ train(java.lang.String)
+comment3.params=trainer\ skill
+comment3.target=boolean\ train(Trainer,\ java.lang.String)
+comment4.params=x\ y
+comment4.target=boolean\ move(int,\ int)
+numComments=5

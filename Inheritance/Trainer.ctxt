@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Trainer
+comment1.params=name
+comment1.target=Trainer(java.lang.String)
+comment2.params=athlete\ skill
+comment2.target=boolean\ teach(Athlete,\ java.lang.String)
+comment3.params=x\ y
+comment3.target=boolean\ move(int,\ int)
+numComments=4
