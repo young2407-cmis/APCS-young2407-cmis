@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=MyPhone
+comment1.params=brand\ ram\ sdCardNumber
+comment1.target=MyPhone(java.lang.String,\ int,\ java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ toString()
+comment3.params=
+comment3.target=int\ getRam()
+comment4.params=
+comment4.target=java.lang.String\ getSdCardNumber()
+comment5.params=ram
+comment5.target=void\ setRam(int)
+comment6.params=sdCardNumber
+comment6.target=void\ setSdCardNumber(java.lang.String)
+numComments=7
