@@ -15,6 +15,7 @@ public class TheBeach extends World
     public static final int W = 1000;
     public static final int H = 700;
     public static final int NSTARFISH = 5;
+    public static final int NJUSTICE = 2;
     public TheBeach()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -23,16 +24,22 @@ public class TheBeach extends World
         for(int i = 0; i < NSTARFISH; i++){
             addObject(new Starfish(), (int)(Math.random() * W), (int)(Math.random() * H));
         }
+        for(int i = 0; i < NJUSTICE; i++){
+            addObject(new Justice(), (int)(Math.random() * W), (int)(Math.random() * H));
+        }
     }
 
     public void act(){
         if(Math.random() > 0.95){
             int x = (int)(Math.random() * W);
             int y = (int)(Math.random() * H);
-            if(Math.random() > 0.3){
+            if(Math.random() < 0.7){
                 addObject(new Banana(), x, y);
-            }else{
+            }else if(Math.random() < 0.5){
                 addObject(new Cherry(), x, y);
+            }
+            else{
+                addObject(new Mango(), x, y);
             }
         }
         List<Starfish> allStarfish = getObjects(Starfish.class);

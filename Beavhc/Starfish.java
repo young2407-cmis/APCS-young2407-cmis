@@ -12,7 +12,7 @@ public class Starfish extends Animal
                 incrementLifeForce();
                 nutrition--;
             }
-        } else if (food instanceof Cherry){
+        }else if (food instanceof Cherry){
             while(Math.random() > 0.10){
                 whither();
             }

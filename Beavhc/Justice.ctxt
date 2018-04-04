@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Justice
+comment1.params=
+comment1.target=void\ changePosition()
+comment2.params=food
+comment2.target=boolean\ eat(greenfoot.Actor)
+comment3.params=
+comment3.target=void\ reproduce()
+numComments=4

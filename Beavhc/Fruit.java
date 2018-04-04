@@ -7,6 +7,7 @@ public abstract class Fruit extends Actor
         this.nutrition = nutrition;
         freshness = (int)(Math.random() * 1000);
     } 
+    
     public final int getNutrition(){
         return nutrition;
     }
