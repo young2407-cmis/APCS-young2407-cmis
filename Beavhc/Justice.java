@@ -1,4 +1,5 @@
 import greenfoot.*;
+import java.util.*;
 public class Justice extends Animal{
     public void changePosition(){
         if(Math.random() > 0.8){
@@ -6,12 +7,13 @@ public class Justice extends Animal{
         }
         move(getLifeForce() / 20);
     }
-    
+
     public boolean eat (Actor food){
         boolean success = false;
         if(food instanceof Starfish && getLifeForce() < 25){
             Starfish starfish = (Starfish) food;
             int nutrition = starfish.getLifeForce();
+            success = true;
             while(nutrition > 0){
                 incrementLifeForce();
                 nutrition--;
@@ -24,9 +26,10 @@ public class Justice extends Animal{
                 incrementLifeForce();
                 nutrition--;
             }
-        }else if (food instanceof Justice && getLifeForce() < 50){
+        }else if (food instanceof Justice && getLifeForce() < 10){
             Justice justice = (Justice) food;
             int nutrition = justice.getLifeForce();
+            success = true;
             while(nutrition > 0){
                 incrementLifeForce();
                 nutrition--;
@@ -34,14 +37,18 @@ public class Justice extends Animal{
         }
         return success;
     }
-    
+
     public void reproduce(){
-        if(isTouching(Starfish.class) && getLifeForce() > 95){
-            World w = getWorld();
-            w.addObject(new Justice(), getX(), getY());
-            while(getLifeForce() > 25){
-                whither();
+        World a = getWorld();
+        List<Justice> alljustice = a.getObjects(Justice.class);        
+        if(alljustice.size() < 4){
+            if(isTouching(Starfish.class) && getLifeForce() > 95){
+                World w = getWorld();
+                w.addObject(new Justice(), getX(), getY());
+                while(getLifeForce() > 25){
+                    whither();
+                }
             }
-        }
+        }        
     }
 }

@@ -1,11 +1,11 @@
 #Greenfoot properties
-#Wed Apr 04 11:41:45 ICT 2018
+#Thu Apr 05 13:54:21 ICT 2018
 project.charset=UTF-8
 mainWindow.height=600
 version=3.0.0
 class.Banana.image=bananas.png
-class.Mango.image=hamburger.png
 class.Cherry.superclass=Fruit
+class.Mango.image=hamburger.png
 simulation.speed=53
 world.lastInstantiated=TheBeach
 mainWindow.y=40
