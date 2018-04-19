@@ -10,6 +10,8 @@ public class Justice extends Animal{
 
     public boolean eat (Actor food){
         boolean success = false;
+        World a = getWorld();
+        List<Justice> allJustice = a.getObjects(Justice.class);  
         if(food instanceof Starfish && getLifeForce() < 25){
             Starfish starfish = (Starfish) food;
             int nutrition = starfish.getLifeForce();
@@ -34,20 +36,18 @@ public class Justice extends Animal{
                 incrementLifeForce();
                 nutrition--;
             }
+        }else if (food instanceof Justice && allJustice.size() > 4){
+            success = true;
         }
         return success;
     }
 
-    public void reproduce(){
-        World a = getWorld();
-        List<Justice> alljustice = a.getObjects(Justice.class);        
-        if(alljustice.size() < 4){
-            if(isTouching(Starfish.class) && getLifeForce() > 95){
-                World w = getWorld();
-                w.addObject(new Justice(), getX(), getY());
-                while(getLifeForce() > 25){
-                    whither();
-                }
+    public void reproduce(){       
+        if(isTouching(Starfish.class) && getLifeForce() > 98){
+            World w = getWorld();
+            w.addObject(new Justice(), getX(), getY());
+            while(getLifeForce() > 25){
+                whither();
             }
         }        
     }
