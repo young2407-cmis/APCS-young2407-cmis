@@ -1,8 +1,9 @@
 #Greenfoot properties
-#Thu May 03 14:34:33 ICT 2018
+#Tue May 08 11:27:36 ICT 2018
 class.Background.image=paper.jpg
-class.Background.superclass=greenfoot.World
+simulation.speed=55
 mainWindow.width=850
+class.Background.superclass=greenfoot.World
 class.Line.superclass=greenfoot.Actor
 class.MyWorld.superclass=greenfoot.World
 project.charset=UTF-8
@@ -11,4 +12,4 @@ world.lastInstantiated=Background
 mainWindow.y=40
 mainWindow.x=40
 mainWindow.height=600
-class.Line.image=blue-draught.png
+class.Line.image=car01.png
