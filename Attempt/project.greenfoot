@@ -1,15 +1,14 @@
 #Greenfoot properties
-#Tue May 08 11:27:36 ICT 2018
+#Wed May 09 14:24:29 ICT 2018
 class.Background.image=paper.jpg
-simulation.speed=55
+simulation.speed=57
 mainWindow.width=850
 class.Background.superclass=greenfoot.World
-class.Line.superclass=greenfoot.Actor
-class.MyWorld.superclass=greenfoot.World
 project.charset=UTF-8
 version=3.0.0
+class.Player.superclass=greenfoot.Actor
 world.lastInstantiated=Background
 mainWindow.y=40
+class.Player.image=Diep.io_Tanks_X-Hunter.png
 mainWindow.x=40
 mainWindow.height=600
-class.Line.image=car01.png

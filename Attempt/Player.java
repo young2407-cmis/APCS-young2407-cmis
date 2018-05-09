@@ -1,18 +1,29 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-public class Line extends Actor
+public class Player extends Actor
 {
     public int x;
     public int y;
+    public int facingx;
+    public int facingy;
+
+    public Player(){
+       GreenfootImage image = getImage();
+       image.scale(90,60);
+       setImage(image);
+    }
+
     public void act()
     {
         moveAndTurn();
-        wrapAround();
+        //wrapAround();
         faceMouse();
     }
-    
+
     public void moveAndTurn()
     {
+        x = getX();
+        y = getY();
         if(Greenfoot.isKeyDown("left")) {
             turnTowards(x-1,y);
             move(1);
@@ -47,26 +58,30 @@ public class Line extends Actor
         }
     }
 
+    /*
     public void wrapAround()
     {
-        x = getX();
-        y = getY();
-        if (x == 599){
-            setLocation(0, y);
-        }
-        if (y == 399){
-            setLocation(x, 0);
-        }
-        if (x == 0){
-            setLocation(599, y);
-        }
-        if (y == 0){
-            setLocation(x, 399);
-        }
+    x = getX();
+    y = getY();
+    if (x == 599){
+    setLocation(0, y);
     }
-    
+    if (y == 399){
+    setLocation(x, 0);
+    }
+    if (x == 0){
+    setLocation(599, y);
+    }
+    if (y == 0){
+    setLocation(x, 399);
+    }
+    }
+     */
+
     public void faceMouse(){
         MouseInfo mouse = Greenfoot.getMouseInfo();
-        turnTowards(mouse.getX(), mouse.getY());
+        facingx = mouse.getX();
+        facingy = mouse.getY();
+        turnTowards(facingx, facingy);
     }
 }
