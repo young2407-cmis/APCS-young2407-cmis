@@ -8,9 +8,9 @@ public class Player extends Actor
     public int facingy;
 
     public Player(){
-       GreenfootImage image = getImage();
-       image.scale(90,60);
-       setImage(image);
+        GreenfootImage image = getImage();
+        image.scale(90,60);
+        setImage(image);
     }
 
     public void act()
@@ -18,6 +18,7 @@ public class Player extends Actor
         moveAndTurn();
         //wrapAround();
         faceMouse();
+        shoot();
     }
 
     public void moveAndTurn()
@@ -83,5 +84,13 @@ public class Player extends Actor
         facingx = mouse.getX();
         facingy = mouse.getY();
         turnTowards(facingx, facingy);
+    }
+
+    public void shoot()
+    {
+        MouseInfo mouseInfo = Greenfoot.getMouseInfo();
+        Bullet bullet = new Bullet();
+        getWorld().addObject(bullet,getX(),getY());
+        bullet.setRotation(getRotation());
     }
 }
