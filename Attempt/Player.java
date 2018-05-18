@@ -15,10 +15,11 @@ public class Player extends Actor
 
     public void act()
     {
+        MouseInfo mouse = Greenfoot.getMouseInfo();
         moveAndTurn();
         //wrapAround();
-        faceMouse();
-        shoot();
+        faceMouse(mouse);
+        shootMouse(mouse);
     }
 
     public void moveAndTurn()
@@ -79,18 +80,42 @@ public class Player extends Actor
     }
      */
 
-    public void faceMouse(){
-        MouseInfo mouse = Greenfoot.getMouseInfo();
+    public void faceMouse(MouseInfo mouse){
         facingx = mouse.getX();
         facingy = mouse.getY();
         turnTowards(facingx, facingy);
     }
 
-    public void shoot()
+    public void shoot(MouseInfo mouse)
     {
-        MouseInfo mouseInfo = Greenfoot.getMouseInfo();
-        Bullet bullet = new Bullet();
-        getWorld().addObject(bullet,getX(),getY());
-        bullet.setRotation(getRotation());
+        if (mouse != null)
+        {
+            if (mouse.getButton() == 1)
+            {
+                Bullet bullet = new Bullet();
+                getWorld().addObject(bullet, getX(), getY());
+                bullet.setRotation(getRotation());
+            }
+        }
+        else if(Greenfoot.mousePressed(mouse.getButton() == 1)){
+            Bullet bullet = new Bullet();
+            getWorld().addObject(bullet, getX(), getY());
+            bullet.setRotation(getRotation());
+        }
+    }
+
+    public void shootMouse(MouseInfo mouse){
+        if (mouse != null){
+            if (mouse.getButton() == 1)
+            {
+                shoot(mouse);
+            }
+        }
+        else{
+            if (Greenfoot.mousePressed("button1"))
+            {
+                shoot(mouse);
+            }
+        }
     }
 }

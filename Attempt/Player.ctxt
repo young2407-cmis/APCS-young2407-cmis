@@ -6,9 +6,11 @@ comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ moveAndTurn()
-comment4.params=
-comment4.target=void\ faceMouse()
+comment4.params=mouse
+comment4.target=void\ faceMouse(greenfoot.MouseInfo)
 comment4.text=\n\ \ \ \ public\ void\ wrapAround()\n\ \ \ \ {\n\ \ \ \ x\ \=\ getX();\n\ \ \ \ y\ \=\ getY();\n\ \ \ \ if\ (x\ \=\=\ 599){\n\ \ \ \ setLocation(0,\ y);\n\ \ \ \ }\n\ \ \ \ if\ (y\ \=\=\ 399){\n\ \ \ \ setLocation(x,\ 0);\n\ \ \ \ }\n\ \ \ \ if\ (x\ \=\=\ 0){\n\ \ \ \ setLocation(599,\ y);\n\ \ \ \ }\n\ \ \ \ if\ (y\ \=\=\ 0){\n\ \ \ \ setLocation(x,\ 399);\n\ \ \ \ }\n\ \ \ \ }\n
-comment5.params=
-comment5.target=void\ shoot()
-numComments=6
+comment5.params=mouse
+comment5.target=void\ shoot(greenfoot.MouseInfo)
+comment6.params=mouse
+comment6.target=void\ shootMouse(greenfoot.MouseInfo)
+numComments=7
