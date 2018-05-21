@@ -6,11 +6,19 @@ public class Player extends Actor
     public int y;
     public int facingx;
     public int facingy;
+    private int reload;
+    private int bulletSpeed;
+    private double damage;
+    private double health;
 
     public Player(){
         GreenfootImage image = getImage();
         image.scale(90,60);
         setImage(image);
+        this.reload = 1;
+        this.bulletSpeed = 1;
+        this.damage = 1;
+        this.health = 1;
     }
 
     public void act()
@@ -18,7 +26,7 @@ public class Player extends Actor
         MouseInfo mouse = Greenfoot.getMouseInfo();
         moveAndTurn();
         //wrapAround();
-        faceMouse(mouse);
+        faceMouse();
         shootMouse(mouse);
     }
 
@@ -80,7 +88,8 @@ public class Player extends Actor
     }
      */
 
-    public void faceMouse(MouseInfo mouse){
+    public void faceMouse(){
+        MouseInfo mouse = Greenfoot.getMouseInfo();
         facingx = mouse.getX();
         facingy = mouse.getY();
         turnTowards(facingx, facingy);
@@ -88,20 +97,9 @@ public class Player extends Actor
 
     public void shoot(MouseInfo mouse)
     {
-        if (mouse != null)
-        {
-            if (mouse.getButton() == 1)
-            {
-                Bullet bullet = new Bullet();
-                getWorld().addObject(bullet, getX(), getY());
-                bullet.setRotation(getRotation());
-            }
-        }
-        else if(Greenfoot.mousePressed(mouse.getButton() == 1)){
-            Bullet bullet = new Bullet();
-            getWorld().addObject(bullet, getX(), getY());
-            bullet.setRotation(getRotation());
-        }
+        Bullet bullet = new Bullet();
+        getWorld().addObject(bullet, getX(), getY());
+        bullet.setRotation(getRotation());
     }
 
     public void shootMouse(MouseInfo mouse){
@@ -111,11 +109,10 @@ public class Player extends Actor
                 shoot(mouse);
             }
         }
-        else{
-            if (Greenfoot.mousePressed("button1"))
-            {
-                shoot(mouse);
-            }
+        else if (Greenfoot.mouseMoved() && mouse.getButton()== 1){
+            Bullet bullet = new Bullet();
+            getWorld().addObject(bullet, getX(), getY());
+            bullet.setRotation(getRotation());
         }
     }
 }

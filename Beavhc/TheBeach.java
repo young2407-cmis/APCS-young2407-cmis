@@ -13,7 +13,7 @@ import java.util.*;
 public class TheBeach extends World
 {
     public static final int W = 1000;
-    public static final int H = 700;
+    public static final int H = 1000;
     public static final int NSTARFISH = 5;
     public static final int NJUSTICE = 2;
     public TheBeach()
