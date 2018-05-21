@@ -10,6 +10,7 @@ public class Player extends Actor
     private int bulletSpeed;
     private double damage;
     private double health;
+    private int speed;
 
     public Player(){
         GreenfootImage image = getImage();
@@ -19,6 +20,7 @@ public class Player extends Actor
         this.bulletSpeed = 1;
         this.damage = 1;
         this.health = 1;
+        this.speed = 5;
     }
 
     public void act()
@@ -26,45 +28,45 @@ public class Player extends Actor
         MouseInfo mouse = Greenfoot.getMouseInfo();
         moveAndTurn();
         //wrapAround();
-        faceMouse();
+        faceMouse(mouse);
         shootMouse(mouse);
     }
 
     public void moveAndTurn()
     {
-        x = getX();
-        y = getY();
-        if(Greenfoot.isKeyDown("left")) {
+        x = this.getX();
+        y = this.getY();
+        if(Greenfoot.isKeyDown("a")) {
             turnTowards(x-1,y);
-            move(1);
+            move(speed);
         }
-        if(Greenfoot.isKeyDown("right")) {
+        if(Greenfoot.isKeyDown("d")) {
             turnTowards(x+1,y);
-            move(1);
+            move(speed);
         }
-        if(Greenfoot.isKeyDown("up")) {
+        if(Greenfoot.isKeyDown("w")) {
             turnTowards(x,y-1);
-            move(1);
+            move(speed);
         }
-        if(Greenfoot.isKeyDown("down")) {
+        if(Greenfoot.isKeyDown("s")) {
             turnTowards(x,y+1);
-            move(1);
+            move(speed);
         }
-        if(Greenfoot.isKeyDown("left") && Greenfoot.isKeyDown("up"))  {
+        if(Greenfoot.isKeyDown("a") && Greenfoot.isKeyDown("w"))  {
             turnTowards(x-1,y-1);
-            move(1);
+            move(speed);
         }
-        if(Greenfoot.isKeyDown("left") && Greenfoot.isKeyDown("down"))  {
+        if(Greenfoot.isKeyDown("a") && Greenfoot.isKeyDown("s"))  {
             turnTowards(x-1,y+1);
-            move(1);
+            move(speed);
         }
-        if(Greenfoot.isKeyDown("right") && Greenfoot.isKeyDown("up"))  {
+        if(Greenfoot.isKeyDown("d") && Greenfoot.isKeyDown("w"))  {
             turnTowards(x+1,y-1);
-            move(1);
+            move(speed);
         }
-        if(Greenfoot.isKeyDown("right") && Greenfoot.isKeyDown("down"))  {
+        if(Greenfoot.isKeyDown("d") && Greenfoot.isKeyDown("s"))  {
             turnTowards(x+1,y+1);
-            move(1);
+            move(speed);
         }
     }
 
@@ -88,14 +90,15 @@ public class Player extends Actor
     }
      */
 
-    public void faceMouse(){
-        MouseInfo mouse = Greenfoot.getMouseInfo();
-        facingx = mouse.getX();
-        facingy = mouse.getY();
-        turnTowards(facingx, facingy);
+    public void faceMouse(MouseInfo mouse){
+        if(mouse != null){
+            facingx = mouse.getX();
+            facingy = mouse.getY();
+            turnTowards(facingx, facingy);
+        }
     }
 
-    public void shoot(MouseInfo mouse)
+    public void shoot()
     {
         Bullet bullet = new Bullet();
         getWorld().addObject(bullet, getX(), getY());
@@ -103,16 +106,8 @@ public class Player extends Actor
     }
 
     public void shootMouse(MouseInfo mouse){
-        if (mouse != null){
-            if (mouse.getButton() == 1)
-            {
-                shoot(mouse);
-            }
-        }
-        else if (Greenfoot.mouseMoved() && mouse.getButton()== 1){
-            Bullet bullet = new Bullet();
-            getWorld().addObject(bullet, getX(), getY());
-            bullet.setRotation(getRotation());
+        if(Greenfoot.isKeyDown("space")) {
+            shoot();
         }
     }
 }
