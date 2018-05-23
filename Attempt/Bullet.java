@@ -10,5 +10,23 @@ public class Bullet extends Actor
     public void act()
     {
         move(10);
+        hitEdges();
+    }
+
+    private void hitEdges()
+    {
+        if((this.getX() < 10 || this.getX() > this.getWorld().getWidth() - 10) && (this != null))
+        {
+            this.getWorld().removeObject(this);
+            return;
+        }
+        if((this.getY() < 10 || this.getY() > this.getWorld().getWidth() - 10)  && (this != null))
+        {
+            this.getWorld().removeObject(this);
+            return;
+        }
+    }
+    
+    private void damage(){
     }
 }

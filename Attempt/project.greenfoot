@@ -1,7 +1,8 @@
 #Greenfoot properties
-#Mon May 21 13:27:18 ICT 2018
+#Wed May 23 09:18:06 ICT 2018
 class.Background.image=paper.jpg
-simulation.speed=57
+simulation.speed=50
+class.Triangle.superclass=Enemy
 class.Bullet.image=Bullet.png
 mainWindow.width=850
 class.Background.superclass=greenfoot.World
@@ -11,7 +12,8 @@ class.Enemy.superclass=greenfoot.Actor
 class.Player.superclass=greenfoot.Actor
 world.lastInstantiated=Background
 mainWindow.y=40
-class.Player.image=Diep.io_Tanks_X-Hunter.png
 mainWindow.x=40
-mainWindow.height=600
+class.Player.image=Diep.io_Tanks_X-Hunter.png
 class.Bullet.superclass=greenfoot.Actor
+mainWindow.height=600
+class.Triangle.image=Red_triangle.png

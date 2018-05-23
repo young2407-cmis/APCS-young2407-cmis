@@ -18,6 +18,10 @@ public class Background extends World
         for(int i = 0; i < nOfPlayer; i++){
             addObject(new Player(), (int)(width/2), (int)(height/2));
         }
+        
+        for(int i = 0; i < nOfPlayer; i++){
+            addObject(new Triangle(), (int)(width/3), (int)(height/3));
+        }
     }
     
     public void act(){

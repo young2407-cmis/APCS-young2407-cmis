@@ -11,12 +11,12 @@ public class Player extends Actor
     private double damage;
     private double health;
     private int speed;
-
+    private int timer= 0;
     public Player(){
         GreenfootImage image = getImage();
         image.scale(90,60);
         setImage(image);
-        this.reload = 1;
+        this.reload = 8;
         this.bulletSpeed = 1;
         this.damage = 1;
         this.health = 1;
@@ -29,7 +29,8 @@ public class Player extends Actor
         moveAndTurn();
         //wrapAround();
         faceMouse(mouse);
-        shootMouse(mouse);
+        shootMouse();
+        die();
     }
 
     public void moveAndTurn()
@@ -105,9 +106,23 @@ public class Player extends Actor
         bullet.setRotation(getRotation());
     }
 
-    public void shootMouse(MouseInfo mouse){
-        if(Greenfoot.isKeyDown("space")) {
-            shoot();
+    public void shootMouse(){
+        if(timer>0){
+            timer--;
+        }
+        if(timer==0 && Greenfoot.isKeyDown("space"))
+        {
+            Bullet bullet = new Bullet();
+            getWorld().addObject(bullet, getX(), getY());
+            bullet.setRotation(getRotation());
+            timer=(41 - reload*5); // about two seconds
+        }
+    } // run timer
+
+    public void die(){
+        if(health <= 0){
+            World w = getWorld();
+            w.removeObject(this);
         }
     }
 }

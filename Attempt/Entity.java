@@ -1,19 +1,13 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
 /**
- * Write a description of class Enemy here.
+ * Write a description of class Entity here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public abstract class Enemy extends Actor
+public abstract class Entity extends Actor  
 {
+    // instance variables - replace the example below with your own
     private int health;
-    private int damage;
-    
-    public void act(){
-        
-    }   
     
     public final void die(){
         if(health <= 0){
